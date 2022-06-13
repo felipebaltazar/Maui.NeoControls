@@ -23,6 +23,9 @@ jobs:
       with:
         dotnet-version: 6.x.x
         
+    - name: Fetch all repository
+      run: git fetch --unshallow
+      
     - name: Determine Version
       uses: gittools/actions/gitversion/execute@v0.9.7
       with:
