@@ -2,7 +2,7 @@ name: Build and publish packages
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
