@@ -3,7 +3,7 @@
   <PropertyGroup>
     <NeutralLanguage>pt-BR</NeutralLanguage>
     <Authors>Felipe Baltazar</Authors>
-    <PackageProjectUrl>https://github.com/felipebaltazar/Xamarin.Forms.NeoControls</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/felipebaltazar/Maui.NeoControls</PackageProjectUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
@@ -11,7 +11,7 @@
     <IncludeSymbols>True</IncludeSymbols>
     <IncludeSource>True</IncludeSource>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/felipebaltazar/Xamarin.Forms.NeoControls</RepositoryUrl>
+    <RepositoryUrl>https://github.com/felipebaltazar/Maui.NeoControls</RepositoryUrl>
     <NeoControlsPackageIcon>$(MSBuildThisFileDirectory)icon.png</NeoControlsPackageIcon>
     <NeoControlsLicenseFile>$(MSBuildThisFileDirectory)LICENSE</NeoControlsLicenseFile>
     <PackageTags>neumorphism;maui;dotnet-maui;xaml;ios;android;</PackageTags>

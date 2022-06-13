@@ -4,11 +4,13 @@
     <TargetFrameworks>net6.0-android;net6.0-ios</TargetFrameworks>
     <SingleProject>true</SingleProject>
     <Nullable>enable</Nullable>
-    <RootNamespace>Maui.NeoControls</RootNamespace>
+    <RootNamespace>Maui.Views.NeoControls</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <UseMaui>true</UseMaui>
     <ImplicitUsings>true</ImplicitUsings>
+    <Version>0.0.1-pre</Version>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+    <PackageId>NeoControls.Maui</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,9 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Maui.Controls.Compatibility" Version="2.88.0" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub"
-                  Version="1.1.1"
-                  PrivateAssets="all" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
