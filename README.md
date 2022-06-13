@@ -1,25 +1,45 @@
-# Xamarin.Forms.NeoControls
+# Maui.NeoControls
 
-Controls for Xamarin Forms based on neumorphism tendency
+Controls for Maui based on neumorphism tendency
 
- [![NuGet](https://img.shields.io/nuget/v/Xamarin.Forms.NeoControls.svg)](https://www.nuget.org/packages/Xamarin.Forms.NeoControls/)
+ [![NuGet](https://img.shields.io/nuget/v/Maui.NeoControls.svg)](https://www.nuget.org/packages/Maui.NeoControls/)
 
 ## Examples
 
-https://github.com/felipebaltazar/NeomorphismSmartHomeApp
-
-![example](https://user-images.githubusercontent.com/19656249/80289178-62cdbc00-8713-11ea-9333-5e13ad8bc7fc.gif)
+![neocontrols maui](https://user-images.githubusercontent.com/19656249/173261798-dee8093a-1dad-4e79-a35d-139bfac66fd5.gif)
 
 
 ## Getting started
 
-- Install the Xamarin.Forms.NeoControls package
+- Install the Maui.NeoControls package
 
  ```
- Install-Package Xamarin.Forms.NeoControls -Version 1.1.0-pre
+ Install-Package Maui.NeoControls -Version 1.0.0-pre
  ```
 
-> No Xaml namespace declaration is needed
+- Add UseNeoControls declaration to your MauiAppBuilder
+
+```csharp
+public static class MauiProgram
+{
+	public static MauiApp CreateMauiApp()
+	{
+		var builder = MauiApp.CreateBuilder();
+		builder
+			.UseMauiApp<App>()
+			.UseNeoControls()
+			.ConfigureFonts(fonts =>
+			{
+				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+    });
+
+		return builder.Build();
+	}
+}
+```
+
+
 - Use the controls
 
 ```xml
@@ -47,8 +67,8 @@ https://github.com/felipebaltazar/NeomorphismSmartHomeApp
     <NeoButton>
         <NeoButton.BackgroundGradient>
             <LinearGradient Angle="45">
-                <GradientStop Color="Red" Offset="0" />
-                <GradientStop Color="Yellow" Offset="1" />
+                <NeoGradientStop Color="Red" Offset="0" />
+                <NeoGradientStop Color="Yellow" Offset="1" />
             </LinearGradient>
         </NeoButton.BackgroundGradient>
 
@@ -58,6 +78,7 @@ https://github.com/felipebaltazar/NeomorphismSmartHomeApp
         </StackLayout>
     </NeoButton>
 ```
+
 ## Property reference
 
 | Property            | What it does                                                          | Extra info                                                                 |
@@ -72,5 +93,4 @@ https://github.com/felipebaltazar/NeomorphismSmartHomeApp
 | `BackgroundGradient`| Draw a gradient on background's control                               | When value != null, backgroundColor Property will be ignored               |
 
 
-## Contributors
-* [Pablo Erick](https://github.com/pabloprogramador) - Contributor
+
