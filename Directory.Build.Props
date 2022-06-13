@@ -1,0 +1,42 @@
+<Project>
+
+  <PropertyGroup>
+    <NeutralLanguage>pt-BR</NeutralLanguage>
+    <Authors>Felipe Baltazar</Authors>
+    <PackageProjectUrl>https://github.com/felipebaltazar/Xamarin.Forms.NeoControls</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <IncludeSymbols>True</IncludeSymbols>
+    <IncludeSource>True</IncludeSource>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/felipebaltazar/Xamarin.Forms.NeoControls</RepositoryUrl>
+    <NeoControlsPackageIcon>$(MSBuildThisFileDirectory)icon.png</NeoControlsPackageIcon>
+    <NeoControlsLicenseFile>$(MSBuildThisFileDirectory)LICENSE</NeoControlsLicenseFile>
+    <PackageTags>neumorphism;maui;dotnet-maui;xaml;ios;android;</PackageTags>
+    <Copyright>Copyright Felipe Baltazar 2021</Copyright>
+    <Description>
+      Neomorphic controls for dotnet Maui
+    </Description>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)$(PackageReadmeFile)"
+          Visible="False"
+          Pack="True"
+          PackagePath="" />
+    <None Include="$(NeoControlsPackageIcon)"
+          Visible="False"
+          Pack="True"
+          PackagePath="" />
+    <None Include="$(NeoControlsLicenseFile)"
+          Visible="False"
+          Pack="True"
+          PackagePath="" />
+    <SourceRoot Include="$(MSBuildThisFileDirectory)" />
+  </ItemGroup>
+
+
+</Project>

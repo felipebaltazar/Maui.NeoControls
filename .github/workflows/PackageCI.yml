@@ -1,0 +1,29 @@
+name: Build and publish packages
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    name: Build and publish package
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 6.x.x
+    - name: Build
+      run: dotnet build ./Maui.NeoControls.sln --configuration Release
+    - name: Pack
+      run: dotnet pack ./Maui.NeoControls.sln  --output ./artifacts --configuration Release
+    - name: Push Nupkg to GitHub Packages
+      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+      with:
+        nupkg-path:  './artifacts/*.nupkg'
+        repo-owner:  'felipebaltazar'
+        gh-user:  'felipebaltazar'
+        token:  ${{ secrets.GITHUB_TOKEN }}
