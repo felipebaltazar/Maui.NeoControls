@@ -2,7 +2,7 @@
 
 Controls for Maui based on neumorphism tendency
 
- [![NuGet](https://img.shields.io/nuget/v/Maui.NeoControls.svg)](https://www.nuget.org/packages/Maui.NeoControls/)
+ [![NuGet](https://img.shields.io/nuget/v/NeoControls.Maui.svg)](https://www.nuget.org/packages/NeoControls.Maui/)
 
 ## Examples
 
@@ -11,10 +11,10 @@ Controls for Maui based on neumorphism tendency
 
 ## Getting started
 
-- Install the Maui.NeoControls package
+- Install the NeoControls.Maui package
 
  ```
- Install-Package Maui.NeoControls -Version 1.0.0-pre
+ Install-Package NeoControls.Maui -Version 0.0.1-pre
  ```
 
 - Add UseNeoControls declaration to your MauiAppBuilder
