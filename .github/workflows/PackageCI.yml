@@ -45,14 +45,6 @@ jobs:
       run: dotnet build ./Maui.NeoControls.sln --configuration Release
     - name: Pack
       run: dotnet pack ./Maui.NeoControls.sln --output ./artifacts --configuration Release
-
-    - name: Push Nupkg to GitHub Packages
-      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
-      with:
-        nupkg-path:  '**\*\artifacts\*.nupkg'
-        repo-owner:  'felipebaltazar'
-        gh-user:  'felipebaltazar'
-        token:  ${{ secrets.GITHUB_TOKEN }}
         
     - name: Publish NuGet.Org
       uses: brandedoutcast/publish-nuget@v2.5.5
