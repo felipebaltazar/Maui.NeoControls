@@ -30,9 +30,6 @@ jobs:
       uses: gittools/actions/gitversion/execute@v0.9.7
       with:
         useConfigFile: true
-        
-    - name: Change version on csproj file
-      run: sed -i -e 's/Version>[0-9a-z.-]*</Version>'$GITVERSION_NUGETVERSION'</' ./Maui.NeoControls/Maui.NeoControls.csproj
 
     - uses: actions/setup-java@v2
       with:
@@ -47,7 +44,7 @@ jobs:
     - name: Build
       run: dotnet build ./Maui.NeoControls.sln --configuration Release
     - name: Pack
-      run: dotnet pack ./Maui.NeoControls.sln  --output ./artifacts --configuration Release
+      run: dotnet pack ./Maui.NeoControls.sln --output ./artifacts --configuration Release
 
     - name: Push Nupkg to GitHub Packages
       uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
@@ -61,6 +58,7 @@ jobs:
       uses: brandedoutcast/publish-nuget@v2.5.5
       if: github.ref == 'refs/heads/main'
       with:
-        PROJECT_FILE_PATH: ./Maui.NeoControls/Maui.NeoControls.csproj
+        PROJECT_FILE_PATH: ./Maui.NeoControls.sln
+        INCLUDE_SYMBOLS: true
         NUGET_KEY: ${{secrets.NUGET_TOKEN}}
-        VERSION_REGEX: ^\s*<Version>(.*)<\/Version>\s*$
+        VERSION_STATIC: $GITVERSION_NUGETVERSION
