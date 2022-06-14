@@ -2,7 +2,9 @@ name: Build and publish packages
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+    - main
+    - develop
 
 jobs:
   build:
@@ -48,15 +50,11 @@ jobs:
       uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
       #if: github.ref == 'refs/heads/develop'
       with:
-        nupkg-path:  './artifacts/*.nupkg'
+        nupkg-path:  '*.nupkg'
         repo-owner:  'felipebaltazar'
         gh-user:  'felipebaltazar'
         token:  ${{ secrets.GITHUB_TOKEN }}
         
-    - name: Publish NuGet.Org
-      uses: brandedoutcast/publish-nuget@v2.5.5
-      if: github.ref == 'refs/heads/main'
-      with:
-        PROJECT_FILE_PATH: ./Maui.NeoControls.sln
-        INCLUDE_SYMBOLS: true
-        NUGET_KEY: ${{secrets.NUGET_TOKEN}}
+    - name: Publish
+      #if: github.ref == 'refs/heads/main'
+      run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
