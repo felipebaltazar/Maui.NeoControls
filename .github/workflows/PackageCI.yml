@@ -5,6 +5,8 @@ on:
     branches: 
     - main
     - develop
+    paths-ignore:
+      - '**/README.md'
 
 jobs:
   build:
@@ -46,8 +48,8 @@ jobs:
       
     - name: Push Nupkg to GitHub Packages
       if: github.ref == 'refs/heads/main'
-      run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/felipe.baltazar/index.json --skip-duplicate
+      run: dotnet nuget push **\*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/felipe.baltazar/index.json --skip-duplicate
         
     - name: Publish to Nuget.org
       if: github.ref == 'refs/heads/main'
-      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+      run: dotnet nuget push **\*.nupkg --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
