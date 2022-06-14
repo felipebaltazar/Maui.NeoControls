@@ -3,6 +3,8 @@
 Controls for Maui based on neumorphism tendency
 
  [![NuGet](https://img.shields.io/nuget/v/NeoControls.Maui.svg)](https://www.nuget.org/packages/NeoControls.Maui/)
+ 
+ [![Build and publish packages](https://github.com/felipebaltazar/Maui.NeoControls/actions/workflows/PackageCI.yml/badge.svg)](https://github.com/felipebaltazar/Maui.NeoControls/actions/workflows/PackageCI.yml)
 
 ## Examples
 
