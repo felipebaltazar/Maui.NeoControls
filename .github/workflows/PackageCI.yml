@@ -55,4 +55,4 @@ jobs:
         
     - name: Publish
       #if: github.ref == 'refs/heads/main'
-      run: dotnet nuget push *.nupkg --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+      run: dotnet nuget push **\*.nupkg --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
