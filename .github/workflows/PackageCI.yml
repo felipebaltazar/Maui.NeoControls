@@ -21,13 +21,12 @@ jobs:
         dotnet-version: 6.x.x
       
     - name: Nerdbank.GitVersioning
-      # You may pin to the exact commit or the version.
-      # uses: dotnet/nbgv@49d4f35f34d895d282b99855b2e0034f8f608ba5
       uses: dotnet/nbgv@v0.4.0
+      id: nbgv
       with:
         setAllVars: true
       
-    - run: echo "NBGV_Version $NBGV_Version"
+    - run: echo "NBGV_Version $NBGV_NuGetPackageVersion"
     
     - uses: actions/setup-java@v2
       with:
@@ -41,8 +40,18 @@ jobs:
         
     - name: Build
       run: dotnet build ./Maui.NeoControls.sln --configuration Release
+      
     - name: Pack
-      run: dotnet pack ./Maui.NeoControls.sln --output ./artifacts --configuration Release
+      run: dotnet pack ./Maui.NeoControls.sln --output ./artifacts --configuration Release -p:Version=${{ steps.nbgv.outputs.SemVer2 }}
+      
+    - name: Push Nupkg to GitHub Packages
+      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
+      #if: github.ref == 'refs/heads/develop'
+      with:
+        nupkg-path:  './artifacts/*.nupkg'
+        repo-owner:  'felipebaltazar'
+        gh-user:  'felipebaltazar'
+        token:  ${{ secrets.GITHUB_TOKEN }}
         
     - name: Publish NuGet.Org
       uses: brandedoutcast/publish-nuget@v2.5.5
@@ -51,4 +60,3 @@ jobs:
         PROJECT_FILE_PATH: ./Maui.NeoControls.sln
         INCLUDE_SYMBOLS: true
         NUGET_KEY: ${{secrets.NUGET_TOKEN}}
-        VERSION_STATIC: $NBGV_Version
