@@ -27,9 +27,7 @@ jobs:
       id: nbgv
       with:
         setAllVars: true
-      
-    - run: echo "NBGV_Version $NBGV_NuGetPackageVersion"
-    
+
     - uses: actions/setup-java@v2
       with:
         distribution: 'microsoft'
@@ -48,7 +46,7 @@ jobs:
       
     - name: Push Nupkg to GitHub Packages
       uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
-      #if: github.ref == 'refs/heads/develop'
+      if: github.ref == 'refs/heads/develop'
       with:
         nupkg-path:  '*.nupkg'
         repo-owner:  'felipebaltazar'
