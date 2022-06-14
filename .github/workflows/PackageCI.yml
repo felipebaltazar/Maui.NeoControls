@@ -45,14 +45,9 @@ jobs:
       run: dotnet pack ./Maui.NeoControls.sln --output ./artifacts --configuration Release -p:Version=${{ steps.nbgv.outputs.SemVer2 }}
       
     - name: Push Nupkg to GitHub Packages
-      uses: tanaka-takayoshi/nuget-publish-to-github-packages-action@v2.1
-      if: github.ref == 'refs/heads/develop'
-      with:
-        nupkg-path:  '*.nupkg'
-        repo-owner:  'felipebaltazar'
-        gh-user:  'felipebaltazar'
-        token:  ${{ secrets.GITHUB_TOKEN }}
+      if: github.ref == 'refs/heads/main'
+      run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/felipe.baltazar/index.json --skip-duplicate
         
-    - name: Publish
-      #if: github.ref == 'refs/heads/main'
-      run: dotnet nuget push **\*.nupkg --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
+    - name: Publish to Nuget.org
+      if: github.ref == 'refs/heads/main'
+      run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_TOKEN}} -s https://api.nuget.org/v3/index.json --skip-duplicate
