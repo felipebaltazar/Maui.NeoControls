@@ -12,7 +12,7 @@ jobs:
   build:
 
     name: Build and publish package
-    runs-on: windows-2022
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 6.x.x
+        dotnet-version: 7.x.x
       
     - name: Nerdbank.GitVersioning
       uses: dotnet/nbgv@v0.4.0
