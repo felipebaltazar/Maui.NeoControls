@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0-android;net6.0-ios</TargetFrameworks>
+    <TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
     <SingleProject>true</SingleProject>
     <Nullable>enable</Nullable>
     <RootNamespace>Maui.Views.NeoControls</RootNamespace>
@@ -18,8 +18,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="SkiaSharp.Views.Maui.Controls.Compatibility" Version="2.88.0" />
+    <PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="2.88.5" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="all" />
+    <PackageReference Update="Nerdbank.GitVersioning" Version="3.6.133" />
   </ItemGroup>
 
   <ItemGroup>

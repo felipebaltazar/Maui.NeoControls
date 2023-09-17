@@ -43,7 +43,7 @@
                 <StackLayout Orientation="Vertical"
                              VerticalOptions="FillAndExpand"
                              HorizontalOptions="FillAndExpand"
-                             Padding="30">
+                             Padding="20">
 
                     <Image VerticalOptions="Start"
                            HorizontalOptions="Start"
@@ -71,7 +71,7 @@
                 <StackLayout Orientation="Vertical"
                          VerticalOptions="FillAndExpand"
                          HorizontalOptions="FillAndExpand"
-                         Padding="30">
+                         Padding="20">
 
                     <Image VerticalOptions="Start"
                            HorizontalOptions="Start"
@@ -98,7 +98,7 @@
                 <StackLayout Orientation="Vertical"
                          VerticalOptions="FillAndExpand"
                          HorizontalOptions="FillAndExpand"
-                         Padding="30">
+                         Padding="20">
 
                     <Image VerticalOptions="Start"
                            HeightRequest="40"
@@ -126,7 +126,7 @@
                              VerticalOptions="FillAndExpand"
                              HorizontalOptions="FillAndExpand"
                              Spacing="0"
-                             Padding="30">
+                             Padding="20">
 
                     <Image 
                         VerticalOptions="Center"
