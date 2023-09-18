@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net7.0-android;net7.0-ios</TargetFrameworks>
+    <TargetFrameworks>net8.0-android;net8.0-ios</TargetFrameworks>
     <SingleProject>true</SingleProject>
     <Nullable>enable</Nullable>
     <RootNamespace>Maui.Views.NeoControls</RootNamespace>
