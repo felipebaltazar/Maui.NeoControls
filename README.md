@@ -16,7 +16,7 @@ Controls for Maui based on neumorphism tendency
 - Install the NeoControls.Maui package
 
  ```
- Install-Package NeoControls.Maui -Version 0.0.1-pre
+ Install-Package NeoControls.Maui -Version 1.0.17
  ```
 
 - Add UseNeoControls declaration to your MauiAppBuilder
