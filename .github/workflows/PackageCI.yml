@@ -47,7 +47,7 @@ jobs:
       run: dotnet pack ./Maui.NeoControls.sln --output ./artifacts --configuration Release -p:Version=${{ steps.nbgv.outputs.SemVer2 }}
       
     - name: Push Nupkg to GitHub Packages
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/develop'
       run: dotnet nuget push **\*.nupkg --api-key ${{ secrets.GITHUB_TOKEN }} -s https://nuget.pkg.github.com/felipe.baltazar/index.json --skip-duplicate
         
     - name: Publish to Nuget.org
