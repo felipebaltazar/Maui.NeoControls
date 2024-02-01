@@ -95,4 +95,7 @@ public static class MauiProgram
 | `BackgroundGradient`| Draw a gradient on background's control                               | When value != null, backgroundColor Property will be ignored               |
 
 
+![Alt](https://repobeats.axiom.co/api/embed/a296ea840303d4b30b0625c0be98094ba6a12011.svg "Repobeats analytics image")
+
+
 
