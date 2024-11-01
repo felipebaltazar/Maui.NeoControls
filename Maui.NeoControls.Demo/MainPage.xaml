@@ -6,34 +6,27 @@
              Shell.PresentationMode="Modal"
              NavigationPage.HasNavigationBar="False">
 
-        <Grid HorizontalOptions="FillAndExpand"
-          VerticalOptions="FillAndExpand"
+        <Grid HorizontalOptions="Fill" VerticalOptions="Fill"
           ColumnSpacing="12"
-          Padding="35">
+          Padding="35"
+          RowDefinitions="10*,27*,27*,10*,15*,12*"
+          ColumnDefinitions="*,*">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="27*"/>
-                <RowDefinition Height="27*"/>
-                <RowDefinition Height="10*"/>
-                <RowDefinition Height="15*"/>
-                <RowDefinition Height="12*"/>
-            </Grid.RowDefinitions>
+            <NeoFrame 
+                   Grid.ColumnSpan="2"
+                   Elevation=".25"
+                   CornerRadius="10,10,10,10"
+                   BackgroundColor="#e3edf7">
+                   <StackLayout Orientation="Vertical" Spacing="0" Padding="0, 15" HorizontalOptions="Center">
+                       <Label Text="Home"
+                          FontFamily="RobotoCondensedRegular"
+                          FontSize="Title" TextColor="Black"/>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="50*" />
-                <ColumnDefinition Width="50*" />
-            </Grid.ColumnDefinitions>
-
-            <StackLayout Orientation="Vertical" Spacing="0">
-                <Label Text="Home"
-                   FontFamily="RobotoCondensedRegular"
-                   FontSize="Title" TextColor="Black"/>
-
-                <Label Text="Lorem Ipsum is"
-                   FontFamily="RobotoCondensedBold"
-                   FontSize="Micro" TextColor="Black"/>
-            </StackLayout>
+                       <Label Text="Lorem Ipsum is"
+                          FontFamily="RobotoCondensedBold"
+                          FontSize="Micro" TextColor="Black" />
+                   </StackLayout>
+            </NeoFrame>
 
             <NeoButton Grid.Row="1"
                        Elevation=".25"
@@ -41,8 +34,8 @@
                        BackgroundColor="#e3edf7">
 
                 <StackLayout Orientation="Vertical"
-                             VerticalOptions="FillAndExpand"
-                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Fill"
+                             HorizontalOptions="Fill"
                              Padding="20">
 
                     <Image VerticalOptions="Start"
@@ -57,7 +50,7 @@
                            FontSize="Small"
                            TextColor="#95a3b8"
                            Margin="20"
-                           VerticalOptions="EndAndExpand"/>
+                           VerticalOptions="End"/>
                 </StackLayout>
 
             </NeoButton>
@@ -69,8 +62,8 @@
                        BackgroundColor="#e3edf7">
 
                 <StackLayout Orientation="Vertical"
-                         VerticalOptions="FillAndExpand"
-                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Fill"
+                         HorizontalOptions="Fill"
                          Padding="20">
 
                     <Image VerticalOptions="Start"
@@ -85,7 +78,7 @@
                            Margin="20"
                            FontSize="Small"
                            TextColor="#95a3b8"
-                           VerticalOptions="EndAndExpand"/>
+                           VerticalOptions="End"/>
 
                 </StackLayout>
             </NeoButton>
@@ -96,8 +89,8 @@
                        Clicked="NeoButton_Clicked"
                        BackgroundColor="#e3edf7">
                 <StackLayout Orientation="Vertical"
-                         VerticalOptions="FillAndExpand"
-                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Fill"
+                         HorizontalOptions="Fill"
                          Padding="20">
 
                     <Image VerticalOptions="Start"
@@ -112,7 +105,7 @@
                            FontSize="Small"
                            TextColor="#95a3b8"
                            Margin="20"
-                           VerticalOptions="EndAndExpand"/>
+                           VerticalOptions="End"/>
                 </StackLayout>
             </NeoButton>
 
@@ -123,8 +116,8 @@
                        BackgroundColor="#e3edf7">
 
                 <StackLayout Orientation="Vertical"
-                             VerticalOptions="FillAndExpand"
-                             HorizontalOptions="FillAndExpand"
+                             VerticalOptions="Fill"
+                             HorizontalOptions="Fill"
                              Spacing="0"
                              Padding="20">
 
@@ -141,7 +134,7 @@
                            FontFamily="RobotoCondensedBold"
                            FontSize="Small"
                            TextColor="#95a3b8"
-                           VerticalOptions="EndAndExpand"/>
+                           VerticalOptions="End"/>
                 </StackLayout>
             </NeoButton>
 
@@ -160,7 +153,7 @@
                              Thickness="20" BackgroundColor="#e3edf7" Grid.ColumnSpan="2">
 
                 <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="FillAndExpand">
+                         HorizontalOptions="Fill">
 
                     <BoxView Margin="40,28,15,28" WidthRequest=".8" Color="#95a3b8" />
                     <BoxView Margin="15,28" WidthRequest=".8" Color="#95a3b8" />
@@ -172,7 +165,7 @@
                     <Label Text="32°C"
                        TextColor="#95a3b8"
                        FontFamily="RobotoCondensedBold"
-                       VerticalOptions="FillAndExpand"
+                       VerticalOptions="Fill"
                        VerticalTextAlignment="Center"/>
                 </StackLayout>
             </NeoProgressView>
@@ -183,7 +176,7 @@
 
                 <NeoButton WidthRequest="60"
                            CornerRadius="10"
-                           HorizontalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
                            ClickMode="Toggle"
                            BackgroundColor="#e3edf7"
                            Elevation=".25">
@@ -196,7 +189,7 @@
 
                 <NeoButton WidthRequest="60"
                            CornerRadius="10"
-                           HorizontalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
                            ClickMode="Toggle"
                            Elevation=".25"
                            BackgroundColor="#e3edf7">
@@ -209,7 +202,7 @@
 
                 <NeoButton WidthRequest="60"
                            CornerRadius="10"
-                           HorizontalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
                            ClickMode="Toggle"
                            Elevation=".25"
                            BackgroundColor="#e3edf7">
@@ -221,7 +214,7 @@
                 </NeoButton>
 
                 <NeoButton WidthRequest="60"
-                           HorizontalOptions="CenterAndExpand"
+                           HorizontalOptions="Center"
                            CornerRadius="10"
                            ClickMode="Toggle"
                            Elevation=".25"

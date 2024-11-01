@@ -5,14 +5,14 @@
              x:Class="Maui.NeoControls.NeoView">
     <ContentView.Content>
         <Grid x:Name="rootView"
-              VerticalOptions="FillAndExpand"
-              HorizontalOptions="FillAndExpand"
+              VerticalOptions="Fill"
+              HorizontalOptions="Fill"
               Margin="0">
 
             <skia:SKCanvasView x:Name="canvas"
                                PaintSurface="OnCanvasViewPaintSurface"
-                               VerticalOptions="FillAndExpand"
-                               HorizontalOptions="FillAndExpand"/>
+                               VerticalOptions="Fill"
+                               HorizontalOptions="Fill"/>
         </Grid>
     </ContentView.Content>
 </ContentView>
